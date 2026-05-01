@@ -2,8 +2,8 @@ name: Bytenut 续期
 
 on:
   schedule:
-    - cron: '5 * * * *'      # 每小时例行检查
-    - cron: '10 4 * * *'     # 北京时间 12:10 准时强制检查一次 (UTC 4:10)
+    # 1. 主力：每 15 分钟扫一次 (确保 20 分钟窗口内必有 1-2 次命中)
+    - cron: '*/15 * * * *'
   workflow_dispatch:
 
 permissions:
